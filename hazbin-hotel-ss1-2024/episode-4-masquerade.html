@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode 4: Masquerade // Hazbin Hotel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh; /* Ensure body takes full height */
+            position: relative;
+            padding-bottom: 50px; /* Add padding to the bottom to avoid overlap with footer */
+        }
+        .header {
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 36px;
+            font-weight: bold;
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            box-sizing: border-box;
+            margin-top: 20px;
+            align-items: flex-start; /* Align items to the start */
+            gap: 20px; /* Add gap between video and episode list */
+        }
+        .video-container {
+            width: 100%;
+            max-width: 800px;
+            position: relative;
+        }
+        .video-container video {
+            width: 100%;
+            height: auto;
+        }
+        .episode-title {
+            font-size: 24px;
+            color: #333;
+            font-weight: bold; /* Make episode title bold */
+            margin-top: 10px;
+            text-align: left; /* Align text to the left */
+        }
+        .episode-name {
+            font-size: 18px;
+            color: #555;
+            font-weight: bold; /* Make episode name bold */
+            margin-top: 5px; /* Space between episode title and episode name */
+            text-align: left;
+        }
+        .sidebar .current-episode .episode-name {
+            font-weight: bold; /* Make the current episode title bold */
+            color: #000000; /* Change color to red or any other color you prefer */
+        }
+        .sidebar {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align items to the start */
+        }
+        .thumbnail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px; /* Increase margin to separate thumbnails */
+            cursor: pointer;
+            width: 100%;
+            max-width: 100%; /* Ensure full width within the sidebar */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .thumbnail img {
+            width: 150px; /* Increase thumbnail width */
+            height: auto;
+            margin-right: 15px; /* Increase space between image and text */
+        }
+        .thumbnail-title {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-size: 18px; /* Increase font size for better visibility */
+            color: #333;
+        }
+        .episode-name {
+            font-weight: bold;
+        }
+        .episode-subtitle {
+            font-size: 16px; /* Adjust subtitle size if needed */
+            color: #666;
+        }
+        .highlight {
+            font-size: 16px;
+            color: #ff0000;
+            font-weight: bold;
+        }
+        .thumbnail:hover {
+            transform: translate(-10px, -10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Media Queries for smaller screens */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: flex-start; /* Align items to the start */
+                gap: 20px; /* Add gap between video and episode list */
+            }
+            .video-container {
+                max-width: 100%;
+                margin-right: 0;
+                margin-bottom: 40px; /* Add margin to push the episode list down */
+            }
+            .sidebar {
+                width: 100%;
+                align-items: flex-start; /* Align items to the start */
+            }
+            .episode-title {
+                font-size: 20px;
+                margin-bottom: 20px; /* Add margin below the title */
+            }
+            .thumbnail img {
+                width: 120px; /* Adjust size for medium screens */
+                margin-right: 12px;
+            }
+            .thumbnail-title {
+                font-size: 16px;
+            }
+            .episode-subtitle {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                font-size: 24px;
+                padding: 10px;
+            }
+            .video-container {
+                max-width: 100%;
+                margin-right: 0;
+                margin-bottom: 50px; /* Add more margin to push the episode list further down */
+            }
+            .episode-title {
+                font-size: 18px;
+                margin-bottom: 20px; /* Add margin below the title */
+            }
+            .episode-name {
+                font-size: 16px;
+            }
+            .thumbnail img {
+                width: 100px; /* Adjust size for smaller screens */
+                margin-right: 10px;
+            }
+            .thumbnail-title {
+                font-size: 14px;
+            }
+            .episode-subtitle {
+                font-size: 12px;
+            }
+        }
+
+        /* Footer Style */
+        .footer {
+            width: 100%;
+            color: #333;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            box-sizing: border-box;
+            background: none; /* Remove background color */
+            margin-top: 30px; /* Add margin to create space above the footer */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Hazbin Hotel - Season 1 (2024)
+    </div>
+    <div class="container">
+        <div class="video-container">
+            <video controls>
+                <source src="Hazbin Hotel Episode 4 Masquerade.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="episode-title">Episode 4</div>
+            <div class="episode-name">Masquerade</div> <!-- No additional class applied here -->
+        </div>
+        <div class="sidebar">
+            <a href="episode-1-overtune" target="_blank" class="thumbnail">
+                <img src="epi1.png" alt="Thumbnail">
+                <div class="thumbnail-title">
+                    <div class="episode-name">Episode 1</div>
+                    <div class="episode-subtitle">Overtune</div>
+                </div>
+            </a>
+            <a href="episode-2-radio-killed-the-video-star" target="_blank" class="thumbnail">
+                <img src="epi2.png" alt="Thumbnail">
+                <div class="thumbnail-title">
+                    <div class="episode-name">Episode 2</div>
+                    <div class="episode-subtitle">Radio Killed the Video Star</div>
+                </div>
+            </a>
+            <a href="episode-3-scrambled-eggs" target="_blank" class="thumbnail">
+                <img src="epi3.png" alt="Thumbnail">
+                <div class="thumbnail-title">
+                    <div class="episode-name">Episode 3</div>
+                    <div class="episode-subtitle">Scrambled Eggs</div>
+                </div>
+            </a>
+            <a href="episode-4-masquerade" target="_blank" class="thumbnail current-episode">
+                <img src="epi4.png" alt="Thumbnail">
+                <div class="thumbnail-title">
+                    <div class="episode-name">Episode 4</div>
+                    <div class="episode-subtitle">Masquerade</div>
+                </div>
+            </a>
+            <a href="episode-5-dad-beat-dad" target="_blank" class="thumbnail">
+                <img src="epi5.png" alt="Thumbnail">
+                <div class="thumbnail-title">
+                    <div class="episode-name">Episode 5</div>
+                    <div class="episode-subtitle">Dad Beat Dad</div>
+                </div>
+            </a>
+            <a href="episode-6-welcome-to-heaven" target="_blank" class="thumbnail">
+                <img src="epi6.png" alt="Thumbnail">
+                <div class="thumbnail-title">
+                    <div class="episode-name">Episode 6</div>
+                    <div class="episode-subtitle">Welcome to Heaven</div>
+                </div>
+            </a>
+            <a href="episode-7-hello-rosie" target="_blank" class="thumbnail">
+                <img src="epi7.png" alt="Thumbnail">
+                <div class="thumbnail-title">
+                    <div class="episode-name">Episode 7</div>
+                    <div class="episode-subtitle">Hello Rosie!</div>
+                </div>
+            </a>
+            <a href="episode-8-the-show-must-go-on" target="_blank" class="thumbnail">
+                <img src="epi8.png" alt="Thumbnail">
+                <div class="thumbnail-title">
+                    <div class="episode-name">Episode 8</div>
+                    <div class="episode-subtitle">The Show Must Go On</div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="footer">
+        huyzipp-hello.github.io is not a movie streaming website
+    </div>
+</body>
+</html>
