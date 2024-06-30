@@ -4,7 +4,6 @@
     <title>Huyzipp's Website</title>
   </head>
   <body>
-    <script src="random404.js"></script>
     <h1>Welcome...</h1>
     <p>
         There is <strong>nothing</strong> here:I
@@ -14,7 +13,24 @@
         Try the links <strong>below</strong>:
     </p>
     <p>
-        <strong>unknown</strong>: <a id="random-link" target="_blank" rel="noopener noreferrer"></a>
+        <strong>unknown</strong>: <script>        // Function to generate a random URL
+        function generateRandomURL() {
+            const baseURL = 'https://huyzipp-hello.github.io/';
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let randomString = '';
+            for (let i = 0; i < 100; i++) {
+                const randomIndex = Math.floor(Math.random() * characters.length);
+                randomString += characters[randomIndex];
+            }
+            const fullURL = baseURL + randomString;
+            return fullURL;
+        }
+
+        // Generate and display the random URL when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const url = generateRandomURL();
+            document.getElementById('url').innerHTML = `Here is your random URL:<br><a href="${url}" target="_blank">${url}</a>`;
+        });</script>
     </p>
   </body>
 </html>
